@@ -12,7 +12,7 @@
 
 ![Continuous Integration](https://github.com/koromerzhin/template-electron/workflows/Continuous%20Integration/badge.svg?branch=develop)
 
-> Template de nouveau repository
+> Template de nouveau project electron
 
 ## 🏠 [Homepage](https://github.com/koromerzhin/template-electron#readme)
 
