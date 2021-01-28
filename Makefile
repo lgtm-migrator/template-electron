@@ -6,6 +6,7 @@ ifneq "$(SUPPORTS_MAKE_ARGS)" ""
   COMMAND_ARGS := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
   $(eval $(COMMAND_ARGS):;@:)
 endif
+
 %:
 	@:
 
