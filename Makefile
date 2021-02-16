@@ -7,9 +7,6 @@ ifneq "$(SUPPORTS_MAKE_ARGS)" ""
   $(eval $(COMMAND_ARGS):;@:)
 endif
 
-%:
-	@:
-
 help:
 	@grep -E '(^[a-zA-Z_-]+:.*?##.*$$)|(^##)' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[32m%-30s\033[0m %s\n", $$1, $$2}' | sed -e 's/\[32m##/[33m/'
 
@@ -27,7 +24,7 @@ node_modules: package-lock.json
 
 install: apps/node_modules node_modules ## Installation application
 
-contributors: ## Contributors
+contributors: node_modules ## Contributors
 ifeq ($(COMMAND_ARGS),add)
 	@npm run contributors add
 else ifeq ($(COMMAND_ARGS),check)
@@ -38,7 +35,7 @@ else
 	@npm run contributors
 endif
 
-git: ## Scripts GIT
+git: node_modules ## Scripts GIT
 ifeq ($(COMMAND_ARGS),commit)
 	@npm run commit
 else ifeq ($(COMMAND_ARGS),status)
@@ -57,7 +54,7 @@ else
 	@echo "status: status"
 endif
 
-linter: ## Scripts Linter
+linter: node_modules ## Scripts Linter
 ifeq ($(COMMAND_ARGS),all)
 	@make linter readme -i
 else ifeq ($(COMMAND_ARGS),readme)
