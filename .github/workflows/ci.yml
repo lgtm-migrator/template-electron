@@ -14,7 +14,7 @@ jobs:
           submodules: recursive
       - name: Cache npm packages
         id: npm-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -25,7 +25,7 @@ jobs:
         run: make node_modules
       - name: Cache apps npm packages
         id: apps-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: apps/node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('**/apps/package-lock.json') }}
