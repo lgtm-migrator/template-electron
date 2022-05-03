@@ -20,6 +20,14 @@ Software:
 - make
 - npm
 
+## Download
+
+```sh
+git clone git@github.com:koromerzhin/template-electron.git template-electron
+cd template-electron
+git submodule update --init
+```
+
 ## Install
 
 ```sh
